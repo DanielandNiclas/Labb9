@@ -11,15 +11,15 @@
     <Position X="2.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAAAAIAAAAAAAAAAAAEAAAAAAAAQ=</HashCode>
-      <FileName>Node.cs</FileName>
+      <FileName>Game\Node.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Labb9.GameBoard">
     <Position X="2.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAACAAAAA=</HashCode>
-      <FileName>GameBoard.cs</FileName>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAACAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Game\GameBoard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Labb9.Runtime">
@@ -33,7 +33,7 @@
     <Position X="0.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Player.cs</FileName>
+      <FileName>Game\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Labb9.IGame">
