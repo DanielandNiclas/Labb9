@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Labb9
 {
-    public class Node :IGame
+    public class Node 
     {
         private int position;
 
@@ -46,9 +46,10 @@ namespace Labb9
         //    Player 
         //}
 
-        public void PlaceMarker(int row, int col, int player)
+        public void PlaceMarker(int player)
         {
-
+            Taken = true;
+            Player = player;
         }
     }
 }
