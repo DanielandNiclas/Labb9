@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Labb9.Game;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,12 +8,15 @@ namespace Labb9
 {
     public class UI
     {
+        #region MainMenu
         public void MainMenu()
         {
             Console.WriteLine("1 - Start game");
             Console.WriteLine("2 - Quit game");
         }
+        #endregion
 
+        #region MainMenuInput
         public string MainMenuInput()
         {
             List<string> validOptions = new List<string>();
@@ -29,9 +33,9 @@ namespace Labb9
             return userChoice;
             
         }
+        #endregion
 
-        //public void PrintGameBoard()
-
+        #region PlayerTurn
         public void PlayerTurn()
         {
 
@@ -49,28 +53,58 @@ namespace Labb9
                     break;
             }
         }
+        #endregion
 
+        #region PrintBoard
         public void PrintBoard(GameBoard gb)
         {
-            string[] node = new string[9];
+            string[] node = new string[10];
 
-            for(int i = 1; i <= 9; i++)
+            for(int position = 1; position <= 9; position++)
             {
-                 if(gb.GetNodeStatus(i))
+                 if(gb.GetNodeStatus(position))
                 {
+                    int player = gb.GetNodePlayer(position);
 
+                    switch(player)
+                    {
+                        case 1:
+                            node[position] = "X";
+                            break;
+
+                        case 2:
+                            node[position] = "O";
+                            break;
+                    }
+                }
+                else
+                {
+                    node[position] = position.ToString();
                 }
             }
             Console.WriteLine("Player 1: X | Player 2: O");
             Console.WriteLine("     |     |      ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}", gb.GetNodeStatus(1) , gb.GetNodeStatus(2), gb.GetNodeStatus(3));
+            Console.WriteLine("  {0}  |  {1}  |  {2}", node[1] , node[2], node[3]);
             Console.WriteLine("_____|_____|_____ ");
             Console.WriteLine("     |     |      ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}", gb.GetNodeStatus(4), gb.GetNodeStatus(5), gb.GetNodeStatus(6));
+            Console.WriteLine("  {0}  |  {1}  |  {2}", node[4], node[5], node[6]);
             Console.WriteLine("_____|_____|_____ ");
             Console.WriteLine("     |     |      ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}", gb.GetNodeStatus(7), gb.GetNodeStatus(8), gb.GetNodeStatus(9));
+            Console.WriteLine("  {0}  |  {1}  |  {2}", node[7], node[8], node[9]);
             Console.WriteLine("     |     |      ");
+        }
+        #endregion
+
+        public int AskPlayerPosition(GameBoard gb)
+        {
+            Console.WriteLine("Please select a tile");
+           string inputString = Console.ReadLine();
+            while(!GameLogic.FreeNodePosition(inputString, gb))
+            {
+                Console.WriteLine("Invalid input, choose again");
+                inputString = Console.ReadLine();
+            }
+            return int.Parse(inputString);
         }
     }
 }

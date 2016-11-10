@@ -53,6 +53,8 @@ namespace Labb9
                     Console.WriteLine("Invalid input, try again.");
 
             } while (true);
+
         }
+        
     }
 }

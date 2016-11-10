@@ -32,7 +32,20 @@ namespace Labb9
         {
             this.Position = position;
             this.Taken = false;
+
+            //if(position == 4)
+            //{
+            //    Taken = true;
+            //    Player = 2;
+            //}
          }
+
+        //public bool ReserveNode(int player)
+        //{
+        //    Taken = true;
+        //    Player 
+        //}
+
         public void PlaceMarker(int row, int col, int player)
         {
 

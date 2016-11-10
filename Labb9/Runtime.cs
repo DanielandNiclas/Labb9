@@ -19,6 +19,7 @@ namespace Labb9
                     //ui.PlayerTurn();
                     GameBoard gb = new GameBoard();
                     ui.PrintBoard(gb);
+                    Console.WriteLine(ui.AskPlayerPosition(gb));
                     //Console.WriteLine(gb.getGameBoardNodes());
                     Console.ReadLine();
                     break;
