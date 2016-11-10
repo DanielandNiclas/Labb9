@@ -13,7 +13,20 @@ namespace Labb9
         public void Start()
         {
             ui.MainMenu();
-            ui.PlayerTurn();
+            switch(ui.MainMenuInput())
+            {
+                case "1":
+                    //ui.PlayerTurn();
+                    GameBoard gb = new GameBoard();
+                    ui.PrintBoard(gb);
+                    //Console.WriteLine(gb.getGameBoardNodes());
+                    Console.ReadLine();
+                    break;
+                case "2":
+                    Environment.Exit(0);
+                    break;
+            }
+            
            
         }
     }

@@ -9,9 +9,11 @@ namespace Labb9
     {
         private int position;
 
-        bool Taken { get; set; }
+        public bool Taken { get; set; }
 
-        int Position
+        public int Player { get; set; }
+
+        public int Position
         {
             get
             {
@@ -29,6 +31,7 @@ namespace Labb9
         public Node(int position)
         {
             this.Position = position;
+            this.Taken = false;
          }
         public void PlaceMarker(int row, int col, int player)
         {

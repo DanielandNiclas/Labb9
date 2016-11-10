@@ -7,8 +7,35 @@ namespace Labb9
 {
     public class GameBoard
     {
-       public static  char[] gameArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        private List<Node> nodes = new List<Node>();
 
+        public static  char[] gameArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
+        public GameBoard()
+        {
+            for(int i=1; i <= 9; i++)
+            {
+                Node node = new Node(i);
+                nodes.Add(node);
+            }
+        }
+
+        public bool GetNodeStatus(int position)
+        {
+            Node node = nodes.Find(listNode => listNode.Position == position);
+            return node.Taken;
+            
+        }
+        public string getGameBoardNodes()
+        {
+            string ret = "";
+            foreach(Node node in nodes)
+            {
+                ret += "Node: " + node.Position.ToString() + Environment.NewLine;
+            }
+            return ret;
+        }
+        /*
         public static void Board()
         {
 
@@ -23,6 +50,7 @@ namespace Labb9
             Console.WriteLine("  {0}  |  {1}  |  {2}", gameArray[7], gameArray[8], gameArray[9]);
             Console.WriteLine("     |     |      ");
         }
+        */
 
         private static int CheckWin()
         {
