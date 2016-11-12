@@ -20,7 +20,7 @@ namespace Labb9
                     GameBoard gb = new GameBoard();
                     ui.PrintBoard(gb);
                     Console.WriteLine(ui.AskPlayerPosition(gb));
-                    //Console.WriteLine(gb.getGameBoardNodes());
+                    //Console.WriteLine(gb.GetGameBoardNodes());
                     Console.ReadLine();
                     break;
                 case "2":

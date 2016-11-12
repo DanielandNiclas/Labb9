@@ -9,6 +9,7 @@ namespace Labb9
     {
         private List<Node> nodes = new List<Node>();
 
+        #region Constructor
         public GameBoard()
         {
             for(int i=1; i <= 9; i++)
@@ -17,22 +18,27 @@ namespace Labb9
                 nodes.Add(node);
             }
         }
+        #endregion
 
+        #region GetNodeStatus
         public bool GetNodeStatus(int position)
         {
             Node node = nodes.Find(listNode => listNode.Position == position);
             return node.Taken;
             
         }
+        #endregion
 
+        #region GetNodePlayer
         public int GetNodePlayer(int position)
         {
             Node node = nodes.Find(listNode => listNode.Position == position);
             return node.Player;
         }
+        #endregion
 
-
-        public string getGameBoardNodes()
+        #region GetGameBoardNodes
+        public string GetGameBoardNodes()
         {
             string ret = "";
             foreach(Node node in nodes)
@@ -41,7 +47,7 @@ namespace Labb9
             }
             return ret;
         }
-
+        #endregion
 
         /*
         public static void Board()
@@ -114,7 +120,7 @@ namespace Labb9
         //    {
         //        return 0;
         //    }
-       // }
+        // }
 
     }
 }

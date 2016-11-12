@@ -27,7 +27,7 @@ namespace Labb9
                 }
             }
         }
-
+        #region Node
         public Node(int position)
         {
             this.Position = position;
@@ -39,17 +39,25 @@ namespace Labb9
             //    Player = 2;
             //}
          }
-
+        #endregion
         //public bool ReserveNode(int player)
         //{
         //    Taken = true;
         //    Player 
         //}
-
-        public void PlaceMarker(int player)
+        #region PlaceMarker
+        public bool PlaceMarker(int player)
         {
-            Taken = true;
-            Player = player;
+            if(Taken)
+            {
+                return false;
+            } else
+            {
+                Taken = true;
+                Player = player;
+                return true;
+            }
+        #endregion
         }
     }
 }
