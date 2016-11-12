@@ -8,10 +8,12 @@ namespace Labb9
     public class Node 
     {
         private int position;
+        private bool taken;
+        private int player;
 
-        public bool Taken { get; set; }
+        public bool Taken { get { return taken; } }
 
-        public int Player { get; set; }
+        public int Player { get { return player; } }
 
         public int Position
         {
@@ -27,11 +29,11 @@ namespace Labb9
                 }
             }
         }
-        #region Node
+        #region Constructor
         public Node(int position)
         {
             this.Position = position;
-            this.Taken = false;
+            this.taken = false;
 
             //if(position == 4)
             //{
@@ -53,8 +55,8 @@ namespace Labb9
                 return false;
             } else
             {
-                Taken = true;
-                Player = player;
+                this.taken = true;
+                this.player = player;
                 return true;
             }
         #endregion

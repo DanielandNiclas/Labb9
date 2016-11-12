@@ -49,6 +49,22 @@ namespace Labb9
         }
         #endregion
 
+        #region ChangeNodeStatus
+        public bool ChangeNodeStatus(int nodePosition, int player)
+        {
+            Node node = nodes.Find(findNode => findNode.Position == nodePosition);
+            if(node.Taken == false)
+            {
+                node.PlaceMarker(player);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        #endregion
+
         /*
         public static void Board()
         {
