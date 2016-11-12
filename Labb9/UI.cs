@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Labb9
 {
-    public class UI
+    public class UI : IUI
     {
         #region MainMenu
         public void MainMenu()
